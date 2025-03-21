@@ -1,16 +1,21 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-facing-decorator'
 import { Answer } from '@/logic/data'
+import router from '@/router'
 
 @Component({})
 export default class AnswerSheet extends Vue {
   @Prop({ required: true }) answers: Answer[]
+
+  change(id: string) {
+    router.push({ path: `/qs/${id}` })
+  }
 }
 </script>
 
 <template>
   <div class="answer-sheet">
-    <a class="answer-item" v-for="u of answers" :key="u.jump" v-bind:href="'/qs/' + u.jump">
+    <a class="answer-item" v-for="u of answers" :key="u.jump" :href="null" @click="change(u.jump)">
       <p>{{ u.answer }}</p>
     </a>
   </div>

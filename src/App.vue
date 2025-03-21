@@ -16,7 +16,7 @@ export default class App extends Vue {
 <template>
   <Navigator />
   <div class="placeholder"/>
-  <RouterView />
+  <RouterView :key="$route.fullPath"/>
 </template>
 
 <style lang="scss">
