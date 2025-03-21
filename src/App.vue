@@ -41,7 +41,7 @@ body {
 }
 
 #app {
-  min-height: 100vh;
+  min-height: 95vh;
   height: fit-content;
   width: 100%;
   max-width: $max-width;
