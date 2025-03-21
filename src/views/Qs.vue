@@ -1,8 +1,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-facing-decorator'
 import AnswerSheet from '@/components/AnswerSheet.vue'
-import questions from '@/data/example.json'
-import { Answer } from '@/logic/data'
+import { Answer, QuestionList } from '@/logic/data'
 
 @Component({
   components: {AnswerSheet},
@@ -10,16 +9,22 @@ import { Answer } from '@/logic/data'
 export default class Qs extends Vue {
   @Prop({ required: true }) id: string;
 
+  questions = null as never as QuestionList
   question = ""
   answers = [] as Answer[]
 
   created() {
-    for (const v of questions.questions) {
-      if (v.id === this.id) {
-        this.question = v.question
-        this.answers = v.answers
-      }
-    }
+    fetch('https://raw.githubusercontent.com/one-among-us/fell-like-data/refs/heads/master/questions.json')
+      .then(it => it.text())
+      .then(it => {
+        this.questions = JSON.parse(it) as QuestionList;
+        for (const v of this.questions.questions) {
+          if (v.id === this.id) {
+            this.question = v.question
+            this.answers = v.answers
+          }
+        }
+      })
   }
 }
 </script>
