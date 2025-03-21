@@ -6,6 +6,7 @@ export interface QuestionList {
 export interface Question {
   id: string;
   question: string;
+  description?: string;
   answers: Answer[];
 }
 

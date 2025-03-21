@@ -14,6 +14,7 @@ export default class Qs extends Vue {
 
   questions = null as never as QuestionList
   question = ""
+  description = ""
   answers = [] as Answer[]
 
   created() {
@@ -26,17 +27,20 @@ export default class Qs extends Vue {
             this.answers = v.answers
             if (getLang() == 'en') {
               this.question = v.question
+              if (v.description) this.description = v.description
             }
             else {
               if (getLang() == 'zh_hant') {
                 const strs = JSON.parse(getResponseSync(zh_hant_strings));
                 if (!strs[v.id]) this.question = v.question;
                 else this.question = strs[v.id];
+                if (strs['alt_' + v.id]) this.description = strs['alt_' + v.id];
               }
               else {
                 const strs = JSON.parse(getResponseSync(zh_hans_strings));
                 if (!strs[v.id]) this.question = v.question;
                 else this.question = strs[v.id];
+                if (strs['alt_' + v.id]) this.description = strs['alt_' + v.id];
               }
             }
           }
@@ -48,6 +52,7 @@ export default class Qs extends Vue {
 
 <template>
   <h2 class="question" v-text="question"></h2>
+  <div class="alt" v-if="description" v-html="description"/>
   <AnswerSheet :answers="answers"/>
 </template>
 
