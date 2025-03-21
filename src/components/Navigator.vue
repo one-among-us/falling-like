@@ -44,6 +44,7 @@ export default class Navigator extends Vue {
     else if (theme === 'high-contrast') {
       setTheme('light')
     }
+    applyTheme();
   }
 }
 </script>
