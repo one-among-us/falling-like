@@ -1,0 +1,33 @@
+:root {
+  --background: #fefefe;
+  --text: #4c4f69;
+  --button-background: #eeeeee;
+  --button-hover: #cbc9cb;
+}
+
+[data-theme="dark"] {
+  :root {
+    --background: #1e1e2e;
+    --text: #cdd6f4;
+    --button-background: #585b70;
+    --button-hover: #585b70;
+  }
+}
+
+[data-theme="high-contrast"] {
+  :root {
+    --background: #fff;
+    --text: #000;
+    --button-background: #fff;
+    --button-hover: #fff;
+  }
+}
+
+[data-theme="high-contrast-dark"] {
+  :root {
+    --background: #000;
+    --text: #fff;
+    --button-background: #000;
+    --button-hover: #000;
+  }
+}

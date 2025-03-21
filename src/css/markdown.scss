@@ -1,0 +1,57 @@
+@import './font';
+
+:root {
+  --header-underline-color: #dc8a78;
+  --link-color: #1e66f5;
+  --link-decoration: none;
+}
+
+[data-theme="dark"] {
+  :root {
+    --header-underline-color: #f5e0dc;
+    --link-decoration: none;
+    --link-color: #89b4fa;
+  }
+}
+
+
+[data-theme="high-contrast"] {
+  :root {
+    --header-underline-color: #f80;
+    --link-decoration: underline;
+    --link-color: #05f;
+  }
+}
+
+[data-theme="high-contrast-dark"] {
+  :root {
+    --header-underline-color: #f80;
+    --link-decoration: underline;
+    --link-color: #0fa;
+  }
+}
+
+.markdown {
+  font-family: $font-family-base;
+  text-align: justify;
+  text-justify: inter-word;
+
+  p {
+    margin: 0.65em 0;
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--link-color);
+    text-decoration: var(--link-decoration);
+  }
+
+  h1, h2 {
+    border-bottom: 1px solid var(--header-underline-color);
+    font-size: 1.5em;
+    margin-top: 1em;
+    line-height: 1.3;
+    margin-bottom: 0.25em;
+    padding: 0;
+  }
+}
