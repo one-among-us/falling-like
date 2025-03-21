@@ -3,9 +3,10 @@ import { Vue, Component } from 'vue-facing-decorator';
 import { applyTheme } from '@/logic/theme'
 import Navigator from '@/components/Navigator.vue'
 import {getLang} from '@/logic/lang'
+import Bottom from '@/components/Bottom.vue'
 
 @Component({
-  components: { Navigator }
+  components: { Bottom, Navigator }
 })
 export default class App extends Vue {
   mounted() {
@@ -19,6 +20,9 @@ export default class App extends Vue {
   <Navigator />
   <div class="placeholder"/>
   <RouterView :key="$route.fullPath"/>
+  <div class="placeholder"/>
+  <div class="placeholder"/>
+  <Bottom />
 </template>
 
 <style lang="scss">

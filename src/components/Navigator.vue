@@ -66,12 +66,13 @@ export default class Navigator extends Vue {
       <a class="reset" href="/">RESET</a>
     </div>
     <div class="right">
-      <div class="nav-lang" v-on:click="changeLangs">
+      <div class="nav-lang button" v-on:click="changeLangs">
         <Icon class="nav-span" icon="la:language"/>
-        <span class="nav-span">{{ lang }}</span>
+        <span class="nav-span unselectable">{{ lang }}</span>
       </div>
-      <Icon class="nav-icon" :icon="icon" v-on:click="changeColor"/>
-      <Icon class="nav-icon" icon="tabler:contrast-filled" v-on:click="changeContrast"/>
+      <Icon class="nav-icon button" :icon="icon" v-on:click="changeColor"/>
+      <Icon class="nav-icon button" icon="tabler:contrast-filled" v-on:click="changeContrast"/>
+      <a href="https://github.com/one-among-us/fell-like" class="nav-icon"><Icon class="nav-icon" icon="simple-icons:github" /></a>
     </div>
   </div>
 </template>
