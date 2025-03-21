@@ -25,7 +25,7 @@ export default class AnswerSheet extends Vue {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: calc(100% - 40px);
   height: min-content;
   max-width: $max-width;
   padding: 20px;
