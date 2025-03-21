@@ -2,6 +2,7 @@
 import { Vue, Component } from 'vue-facing-decorator';
 import { applyTheme } from '@/logic/theme'
 import Navigator from '@/components/Navigator.vue'
+import {getLang} from '@/logic/lang'
 
 @Component({
   components: { Navigator }
@@ -9,6 +10,7 @@ import Navigator from '@/components/Navigator.vue'
 export default class App extends Vue {
   mounted() {
     applyTheme()
+    document.getElementById("app").dataset.lang = getLang()
   }
 }
 </script>

@@ -12,6 +12,7 @@ export interface Question {
 export interface Answer {
   answer: string;
   jump: string;
+  id: string;
 }
 
 export const initAnswers = [

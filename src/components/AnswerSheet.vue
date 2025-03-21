@@ -2,6 +2,9 @@
 import { Vue, Component, Prop } from 'vue-facing-decorator'
 import { Answer } from '@/logic/data'
 import router from '@/router'
+import { getLang } from '@/logic/lang'
+import { getResponseSync } from '@/logic/helper'
+import { zh_hans_strings, zh_hant_strings } from '@/logic/config'
 
 @Component({})
 export default class AnswerSheet extends Vue {
@@ -10,13 +13,27 @@ export default class AnswerSheet extends Vue {
   change(id: string) {
     router.push({ path: `/qs/${id}` })
   }
+
+  getAnswerString(u: Answer) {
+    if (getLang() == 'en') return u.answer;
+    if (getLang() == 'zh_hant') {
+      const strs = JSON.parse(getResponseSync(zh_hant_strings));
+      if (!strs[u.id]) return u.answer;
+      return strs[u.id];
+    }
+    if (getLang() == 'zh_hans') {
+      const strs = JSON.parse(getResponseSync(zh_hans_strings));
+      if (!strs[u.id]) return u.answer;
+      return strs[u.id];
+    }
+  }
 }
 </script>
 
 <template>
   <div class="answer-sheet">
     <a class="answer-item" v-for="u of answers" :key="u.jump" :href="null" @click="change(u.jump)">
-      <p>{{ u.answer }}</p>
+      <p>{{ getAnswerString(u) }}</p>
     </a>
   </div>
 </template>

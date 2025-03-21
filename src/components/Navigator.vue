@@ -2,6 +2,7 @@
 import { Vue, Component } from 'vue-facing-decorator'
 import { Icon } from '@iconify/vue'
 import { applyTheme, getTheme, setTheme } from '@/logic/theme'
+import { getLang, setLang } from '@/logic/lang'
 
 @Component({
   components: {Icon}
@@ -46,6 +47,15 @@ export default class Navigator extends Vue {
     }
     applyTheme();
   }
+
+  changeLangs() {
+    let lang = getLang()
+    if (lang == 'en') lang = 'zh_hans'
+    else if (lang == 'zh_hans') lang = 'zh_hant'
+    else lang = 'en'
+    setLang(lang)
+    location.reload()
+  }
 }
 </script>
 
@@ -55,6 +65,7 @@ export default class Navigator extends Vue {
       <a class="reset" href="/">RESET</a>
     </div>
     <div class="right">
+      <Icon class="nav-icon" icon="la:language" v-on:click="changeLangs"/>
       <Icon class="nav-icon" :icon="icon" v-on:click="changeColor"/>
       <Icon class="nav-icon" icon="tabler:contrast-filled" v-on:click="changeContrast"/>
     </div>

@@ -2,6 +2,9 @@
 import { Vue, Component, Prop } from 'vue-facing-decorator'
 import AnswerSheet from '@/components/AnswerSheet.vue'
 import { Answer, QuestionList } from '@/logic/data'
+import { data_uri, zh_hans_strings, zh_hant_strings } from '@/logic/config'
+import { getLang } from '@/logic/lang'
+import { getResponseSync } from '@/logic/helper'
 
 @Component({
   components: {AnswerSheet},
@@ -14,14 +17,28 @@ export default class Qs extends Vue {
   answers = [] as Answer[]
 
   created() {
-    fetch('https://raw.githubusercontent.com/one-among-us/fell-like-data/refs/heads/master/questions.json')
+    fetch(data_uri)
       .then(it => it.text())
       .then(it => {
         this.questions = JSON.parse(it) as QuestionList;
         for (const v of this.questions.questions) {
           if (v.id === this.id) {
-            this.question = v.question
             this.answers = v.answers
+            if (getLang() == 'en') {
+              this.question = v.question
+            }
+            else {
+              if (getLang() == 'zh_hant') {
+                const strs = JSON.parse(getResponseSync(zh_hant_strings));
+                if (!strs[v.id]) this.question = v.question;
+                else this.question = strs[v.id];
+              }
+              else {
+                const strs = JSON.parse(getResponseSync(zh_hans_strings));
+                if (!strs[v.id]) this.question = v.question;
+                else this.question = strs[v.id];
+              }
+            }
           }
         }
       })
