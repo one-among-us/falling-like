@@ -1,45 +1,26 @@
-# fell-like
+# Fell Like
 
-This template should help get you started developing with Vue 3 in Vite.
+Fell Like is a customisable question set.
 
-## Recommended IDE Setup
+> Remake from [https://youfeellikeshit.com](https://youfeellikeshit.com).
+>
+> Completed by [𝓔𝓵𝓲𝓱𝓾𝓼𝓸 𝓠𝓾𝓲𝓰𝓵𝓮𝔂](https://github.com/LS-KR) from [One Among Us](https://oneamongus.ca) with love ❤️
+>
+> Thanks [Amanda Miklik](http://amandamiklik.com) and [Jace Harr](https://jaceharr.com/about/); thanks for all your contribution
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## Development
 
 ```sh
-yarn
-```
+# clone this repo
+git clone https://github.com/one-among-us/fell-like
+cd fell-like
 
-### Compile and Hot-Reload for Development
+# install dependencies
+yarn install
 
-```sh
+# run locally
 yarn dev
-```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+# build dist
 yarn build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-yarn test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-yarn lint
 ```
