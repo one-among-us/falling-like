@@ -1,13 +1,21 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-facing-decorator';
+import { applyTheme } from '@/logic/theme'
+import Navigator from '@/components/Navigator.vue'
 
-@Component({})
+@Component({
+  components: { Navigator }
+})
 export default class App extends Vue {
-
+  mounted() {
+    applyTheme()
+  }
 }
 </script>
 
 <template>
+  <Navigator />
+  <div class="placeholder"/>
   <RouterView />
 </template>
 
@@ -22,6 +30,8 @@ export default class App extends Vue {
 
 body {
   font-family: $font-family-base;
+  background-color: var(--background);
+  color: var(--text);
 }
 
 #app {

@@ -38,11 +38,11 @@ export default class AnswerSheet extends Vue {
     width: 100%;
     height: 48px;
     background: var(--button-background);
-    border: none;
     outline: none;
     border-radius: 16px;
     text-decoration: none;
     color: var(--text);
+    border: 2px solid var(--button-border);
 
     &:hover {
       background: var(--button-hover);
