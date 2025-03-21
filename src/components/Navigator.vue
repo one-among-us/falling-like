@@ -9,6 +9,7 @@ import { getLang, setLang } from '@/logic/lang'
 })
 export default class Navigator extends Vue {
   icon = "mynaui:sun"
+  lang = getLang()
 
   changeColor() {
     const theme = getTheme()
@@ -65,7 +66,10 @@ export default class Navigator extends Vue {
       <a class="reset" href="/">RESET</a>
     </div>
     <div class="right">
-      <Icon class="nav-icon" icon="la:language" v-on:click="changeLangs"/>
+      <div class="nav-lang" v-on:click="changeLangs">
+        <Icon class="nav-span" icon="la:language"/>
+        <span class="nav-span">{{ lang }}</span>
+      </div>
       <Icon class="nav-icon" :icon="icon" v-on:click="changeColor"/>
       <Icon class="nav-icon" icon="tabler:contrast-filled" v-on:click="changeContrast"/>
     </div>
@@ -116,6 +120,31 @@ export default class Navigator extends Vue {
 
       &:hover {
         background-color: var(--button-hover);
+      }
+    }
+
+    .nav-lang {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      height: 24px;
+      width: fit-content;
+      gap: 2px;
+
+      &:hover {
+        background-color: var(--button-hover);
+      }
+
+      .nav-span {
+        color: var(--text);
+        width: fit-content;
+        height: 24px;
+        border-radius: 12px;
+        padding: 6px;
+        font-family: $font-family-base;
+        font-size: 16px;
       }
     }
   }
