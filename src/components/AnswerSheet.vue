@@ -58,7 +58,8 @@ export default class AnswerSheet extends Vue {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 48px;
+    min-height: 48px;
+    height: fit-content;
     background: var(--button-background);
     outline: none;
     border-radius: 16px;
