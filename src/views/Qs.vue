@@ -65,4 +65,8 @@ export default class Qs extends Vue {
   text-align: center;
   text-wrap: wrap;
 }
+
+.alt {
+  font-size: 1.1rem;
+}
 </style>
