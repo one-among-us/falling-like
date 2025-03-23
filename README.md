@@ -5,6 +5,8 @@ Fell Like is a customisable question set.
 > Remake from [https://youfeellikeshit.com](https://youfeellikeshit.com).
 >
 > Completed by [𝓔𝓵𝓲𝓱𝓾𝓼𝓸 𝓠𝓾𝓲𝓰𝓵𝓮𝔂](https://github.com/LS-KR) from [One Among Us](https://oneamongus.ca) with love ❤️
+> 
+> Translated by [natsupockets](https://t.me/ntspkts)
 >
 > Thanks [Amanda Miklik](http://amandamiklik.com) and [Jace Harr](https://jaceharr.com/about/); thanks for all your contribution
 
