@@ -13,6 +13,7 @@ export default class Bottom extends Vue {
     <div class="bottom-content markdown">
       <p>Remake from <a href="https://youfeellikeshit.com">https://youfeellikeshit.com</a></p>
       <p>Completed by <a href="https://github.com/LS-KR">𝓔𝓵𝓲𝓱𝓾𝓼𝓸 𝓠𝓾𝓲𝓰𝓵𝓮𝔂</a> from <a href="https://oneamongus.ca">One Among Us</a> with love ❤️</p>
+      <p>Translated by <a href="https://t.me/ntspkts">natsupockets</a></p>
       <p>Thanks <a href="http://amandamiklik.com">Amanda Miklik</a> and <a href="https://jaceharr.com/about/">Jace Harr</a>; thanks for all your contribution.</p>
     </div>
   </div>
@@ -44,6 +45,10 @@ export default class Bottom extends Vue {
   .bottom-content {
     display: block;
     text-wrap: stable;
+  }
+
+  p {
+    line-height: 1.2;
   }
 }
 </style>
