@@ -36,8 +36,10 @@ export default class Bottom extends Vue {
   height: fit-content;
 
   .leaf {
-    width: 120px;
-    height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+    width: 20%;
+    height: auto;
     object-fit: cover;
     display: block;
   }
