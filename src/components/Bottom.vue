@@ -53,4 +53,10 @@ export default class Bottom extends Vue {
     line-height: 1.2;
   }
 }
+
+@media screen and (max-width: 568px) {
+  .bottom {
+    display: none;
+  }
+}
 </style>
