@@ -13,6 +13,17 @@ const router = createRouter({
       name: 'Qs',
       component: () => import('../views/Qs.vue'),
       props: true
+    },
+    {
+      path: '/fell-like',
+      name: 'Alt-Home',
+      component: () => import('../views/Home.vue'),
+    },
+    {
+      path: '/fell-like/qs/:id',
+      name: 'Alt-Qs',
+      component: () => import('../views/Qs.vue'),
+      props: true,
     }
   ],
   scrollBehavior(to, from, savedPosition) {
