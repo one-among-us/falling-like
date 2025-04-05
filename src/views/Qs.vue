@@ -46,6 +46,7 @@ export default class Qs extends Vue {
           }
         }
       })
+    document.title = `Question Id: ${ this.id }`;
   }
 }
 </script>
