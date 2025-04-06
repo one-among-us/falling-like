@@ -12,6 +12,9 @@ export default class App extends Vue {
   mounted() {
     applyTheme()
     document.getElementById("app").dataset.lang = getLang()
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      applyTheme();
+    })
   }
 }
 </script>
