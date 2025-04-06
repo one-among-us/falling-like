@@ -1,6 +1,6 @@
-# Fell Like
+# Falling Like
 
-Fell Like is a customisable question set.
+Falling Like is a customisable question set.
 
 > Remake from [https://youfeellikeshit.com](https://youfeellikeshit.com).
 >
