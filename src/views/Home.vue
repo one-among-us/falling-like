@@ -3,6 +3,7 @@ import { Vue, Component } from 'vue-facing-decorator'
 import homehtml from '@/assets/home.md'
 import homehtml_zh_hans from '@/assets/home.zh_hans.md'
 import homehtml_zh_hant from '@/assets/home.zh_hant.md'
+import homehtml_ja_jp from '@/assets/home.ja_jp.md'
 import { initAnswers } from '@/logic/data'
 import AnswerSheet from '@/components/AnswerSheet.vue'
 import { getLang } from '@/logic/lang'
@@ -11,7 +12,7 @@ import { getLang } from '@/logic/lang'
   components: { AnswerSheet }
 })
 export default class Home extends Vue {
-  html = (getLang() == 'en') ? homehtml : (getLang() == 'zh_hans' ? homehtml_zh_hans : homehtml_zh_hant)
+  html = (getLang() == 'en') ? homehtml : (getLang() == 'zh_hans' ? homehtml_zh_hans : (getLang() == 'zh_hant' ?  homehtml_zh_hant : homehtml_ja_jp))
   answers = initAnswers
 }
 </script>

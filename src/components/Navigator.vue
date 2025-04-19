@@ -53,6 +53,7 @@ export default class Navigator extends Vue {
     let lang = getLang()
     if (lang == 'en') lang = 'zh_hans'
     else if (lang == 'zh_hans') lang = 'zh_hant'
+    else if (lang == 'zh_hant') lang = 'ja_jp'
     else lang = 'en'
     setLang(lang)
     location.reload()

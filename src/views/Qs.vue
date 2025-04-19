@@ -2,7 +2,7 @@
 import { Vue, Component, Prop } from 'vue-facing-decorator'
 import AnswerSheet from '@/components/AnswerSheet.vue'
 import { Answer, QuestionList } from '@/logic/data'
-import { data_uri, zh_hans_strings, zh_hant_strings } from '@/logic/config'
+import { data_uri, ja_jp_strings, zh_hans_strings, zh_hant_strings } from '@/logic/config'
 import { getLang } from '@/logic/lang'
 import { getResponseSync } from '@/logic/helper'
 
@@ -36,8 +36,14 @@ export default class Qs extends Vue {
                 else this.question = strs[v.id];
                 if (strs['alt_' + v.id]) this.description = strs['alt_' + v.id];
               }
-              else {
+              else if (getLang() == 'zh_hans') {
                 const strs = JSON.parse(getResponseSync(zh_hans_strings));
+                if (!strs[v.id]) this.question = v.question;
+                else this.question = strs[v.id];
+                if (strs['alt_' + v.id]) this.description = strs['alt_' + v.id];
+              }
+              else {
+                const strs = JSON.parse(getResponseSync(ja_jp_strings));
                 if (!strs[v.id]) this.question = v.question;
                 else this.question = strs[v.id];
                 if (strs['alt_' + v.id]) this.description = strs['alt_' + v.id];

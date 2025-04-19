@@ -4,7 +4,7 @@ import { Answer } from '@/logic/data'
 import router from '@/router'
 import { getLang } from '@/logic/lang'
 import { getResponseSync } from '@/logic/helper'
-import { zh_hans_strings, zh_hant_strings } from '@/logic/config'
+import { ja_jp_strings, zh_hans_strings, zh_hant_strings } from '@/logic/config'
 
 @Component({})
 export default class AnswerSheet extends Vue {
@@ -23,6 +23,11 @@ export default class AnswerSheet extends Vue {
     }
     if (getLang() == 'zh_hans') {
       const strs = JSON.parse(getResponseSync(zh_hans_strings));
+      if (!strs[u.id]) return u.answer;
+      return strs[u.id];
+    }
+    if (getLang() == 'ja_jp') {
+      const strs = JSON.parse(getResponseSync(ja_jp_strings));
       if (!strs[u.id]) return u.answer;
       return strs[u.id];
     }
