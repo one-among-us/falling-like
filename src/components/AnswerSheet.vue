@@ -69,6 +69,7 @@ export default class AnswerSheet extends Vue {
 
     &:hover {
       background: var(--button-hover);
+      cursor: pointer;
     }
 
     p {
