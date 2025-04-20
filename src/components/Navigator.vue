@@ -73,7 +73,7 @@ export default class Navigator extends Vue {
       </div>
       <Icon class="nav-icon button" :icon="icon" v-on:click="changeColor"/>
       <Icon class="nav-icon button" icon="tabler:contrast-filled" v-on:click="changeContrast"/>
-      <a href="https://github.com/one-among-us/fell-like" class="nav-icon"><Icon class="nav-icon" icon="simple-icons:github" /></a>
+      <a href="https://github.com/one-among-us/fell-like" class="nav-icon github-button"><Icon class="nav-icon" icon="simple-icons:github" /></a>
     </div>
   </div>
 </template>
@@ -149,6 +149,12 @@ export default class Navigator extends Vue {
         font-size: 16px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 328px) {
+  .github-button {
+    display: none;
   }
 }
 </style>
