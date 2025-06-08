@@ -67,7 +67,7 @@ export default class Navigator extends Vue {
       <a class="reset" href="/">RESET</a>
     </div>
     <div class="right">
-      <div class="nav-lang button" v-on:click="changeLangs">
+      <div class="nav-lang button" v-on:click="changeLangs" v-show="$route.path == '/'">
         <Icon class="nav-span" icon="la:language"/>
         <span class="nav-span unselectable">{{ lang }}</span>
       </div>
